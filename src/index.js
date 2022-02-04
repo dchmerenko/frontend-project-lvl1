@@ -34,7 +34,7 @@ const doQuiz = (userName, taskMsg, questionGenerator) => {
 /**
  * Return Greatest Common Divisor.
  */
-const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b);
+const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 
 /**
  * Return true if number is even else false.
