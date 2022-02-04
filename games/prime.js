@@ -1,8 +1,9 @@
 import name from '../src/cli.js';
+import * as config from '../config.js';
 import { doQuiz, isPrime, randInt } from '../src/index.js';
 
 const generatePrimeQuestion = () => {
-  const number = randInt(100);
+  const number = randInt(config.MAX_PRIME_NUMBER);
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
 
   return [number, correctAnswer];

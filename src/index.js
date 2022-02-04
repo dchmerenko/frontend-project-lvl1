@@ -1,6 +1,7 @@
 // Auxiliary functions mudule.
 
 import readlineSync from 'readline-sync';
+import * as config from '../config.js';
 
 /**
  * Ask question and return an answer.
@@ -13,7 +14,11 @@ const askUser = (question) => readlineSync.question(`Question: ${question} `);
 const doQuiz = (userName, taskMsg, questionGenerator) => {
   console.log(taskMsg);
 
-  for (let questionCounter = 0; questionCounter < 3; questionCounter += 1) {
+  for (
+    let questionCounter = 0;
+    questionCounter < config.QUESTION_COUNTER;
+    questionCounter += 1
+  ) {
     const [question, correctAnswer] = questionGenerator();
     const userAnswer = askUser(question);
 
@@ -55,16 +60,12 @@ const isPrime = (number) => {
 
 /**
  * Return random integer from low to upper bounds inclusevly.
- * (default from 0 to 10)
  *
  * randInt()      --> 0..10
  * randInt(5)     --> 0..5
  * randInt(5, 10) --> 5..10
  */
 const randInt = (low, upper) => {
-  const lowDefault = 0;
-  const upperDefault = 10;
-
   let lb;
   let ub;
 
@@ -73,10 +74,10 @@ const randInt = (low, upper) => {
     ub = upper;
   } else if (low !== undefined) {
     ub = low;
-    lb = lowDefault;
+    lb = config.MIN_RANDOM_NUMBER;
   } else {
-    lb = lowDefault;
-    ub = upperDefault;
+    lb = config.MIN_RANDOM_NUMBER;
+    ub = config.MAX_RANDOM_NUMBER;
   }
 
   return lb + Math.floor((ub + 1 - lb) * Math.random());
