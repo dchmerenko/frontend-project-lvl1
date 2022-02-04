@@ -21,7 +21,11 @@ const doQuiz = (userName, taskMsg, questionGenerator) => {
       console.log([
         `"${userAnswer}" is wrong answer ;(. `,
         `Correct answer was "${correctAnswer}"\n`,
+<<<<<<< HEAD
         `Lets try again, ${userName}!`,
+=======
+        `Let's try again, ${userName}!`,
+>>>>>>> 5b9e303 (Refactor most package files.)
       ].join(''));
       return;
     }
