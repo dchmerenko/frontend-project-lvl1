@@ -32,6 +32,11 @@ const doQuiz = (userName, taskMsg, questionGenerator) => {
 };
 
 /**
+ * Return Greatest Common Divisor.
+ */
+const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b);
+
+/**
  * Return true if number is even else false.
  */
 const isEven = (number) => number % 2 === 0;
@@ -68,6 +73,7 @@ const randInt = (low, upper) => {
 export {
   askUser,
   doQuiz,
+  gcd,
   isEven,
   randInt,
 };
