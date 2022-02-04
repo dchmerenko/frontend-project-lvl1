@@ -7,7 +7,7 @@ const generateProgressionQuestion = () => {
   const repeat = randInt(5, 10);
   const progression = [];
 
-  for (let i = start; i < step * repeat; i += step) {
+  for (let i = start; i < start + step * repeat; i += step) {
     progression.push(String(i));
   }
 
