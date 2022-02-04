@@ -42,6 +42,18 @@ const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 const isEven = (number) => number % 2 === 0;
 
 /**
+ * Return true if number is prime else false.
+ */
+const isPrime = (number) => {
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+/**
  * Return random integer from low to upper bounds inclusevly.
  * (default from 0 to 10)
  *
@@ -75,5 +87,6 @@ export {
   doQuiz,
   gcd,
   isEven,
+  isPrime,
   randInt,
 };
