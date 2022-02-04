@@ -4,15 +4,15 @@ import { doQuiz, randInt } from '../src/index.js';
 const generateCalcQuestion = () => {
   const a = randInt();
   const b = randInt();
-  const operations_map = {
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '*': (a, b) => a * b,
-  }
-  const operations = Object.keys(operations_map);
+  const operationsMap = {
+    '+': (x, y) => x + y,
+    '-': (x, y) => x - y,
+    '*': (x, y) => x * y,
+  };
+  const operations = Object.keys(operationsMap);
   const operator = operations[randInt(operations.length - 1)];
   const expression = `${a} ${operator} ${b}`;
-  const correctAnswer = String(operations_map[operator](a, b));
+  const correctAnswer = String(operationsMap[operator](a, b));
 
   return [expression, correctAnswer];
 };
